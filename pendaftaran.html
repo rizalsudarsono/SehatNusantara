@@ -1,0 +1,496 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran - Klinik Sehat Nusantara</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- CSS Lokal -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+            <div class="container">
+
+                <a class="navbar-brand fw-bold" href="index.html">
+                    <i class="bi bi-hospital"></i>
+                    Sehat Nusantara
+                </a>
+
+                <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarMenu"
+                    aria-controls="navbarMenu"
+                    aria-expanded="false"
+                    aria-label="Buka navigasi">
+
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarMenu">
+                    <ul class="navbar-nav ms-auto">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Beranda</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="layanan.html">Layanan</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="dokter.html">Dokter</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="pendaftaran.html">Pendaftaran</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- KONTEN UTAMA -->
+    <main>
+
+        <!-- JUDUL HALAMAN -->
+        <section class="judul-halaman">
+            <div class="container text-center">
+
+                <h1>Pendaftaran Pasien Online</h1>
+
+                <p>
+                    Silakan lengkapi formulir berikut untuk melakukan
+                    pendaftaran kunjungan di Klinik Sehat Nusantara.
+                </p>
+
+            </div>
+        </section>
+
+
+        <!-- FORM PENDAFTARAN -->
+        <section class="pendaftaran-section">
+            <div class="container">
+
+                <div class="form-pendaftaran">
+
+                    <div class="text-center mb-4">
+                        <i class="bi bi-clipboard2-pulse ikon-form"></i>
+
+                        <h2>Formulir Pendaftaran</h2>
+
+                        <p>
+                            Isi data dengan benar dan lengkap.
+                            Kolom bertanda (*) wajib diisi.
+                        </p>
+                    </div>
+
+
+                    <form id="formPendaftaran" novalidate>
+
+                        <!-- DATA PASIEN -->
+                        <h5 class="judul-form">
+                            <i class="bi bi-person"></i>
+                            Data Pasien
+                        </h5>
+
+                        <div class="mb-3">
+                            <label for="nama" class="form-label">
+                                Nama Lengkap *
+                            </label>
+
+                            <input type="text" id="nama" name="nama"
+                                class="form-control"
+                                placeholder="Masukkan nama lengkap">
+
+                            <small class="pesan-error" id="errorNama"></small>
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label for="nik" class="form-label">
+                                NIK *
+                            </label>
+
+                            <input type="text" id="nik" name="nik"
+                                class="form-control"
+                                placeholder="Masukkan 16 digit NIK"
+                                inputmode="numeric"
+                                maxlength="16">
+
+                            <small class="pesan-error" id="errorNik"></small>
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label for="tanggalLahir" class="form-label">
+                                Tanggal Lahir *
+                            </label>
+
+                            <input type="date" id="tanggalLahir"
+                                name="tanggalLahir"
+                                class="form-control">
+
+                            <small class="pesan-error" id="errorTanggalLahir"></small>
+
+                            <p id="informasiUsia" class="info-usia"></p>
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label class="form-label">
+                                Jenis Kelamin *
+                            </label>
+
+                            <div class="pilihan-gender">
+
+                                <div class="form-check">
+                                    <input type="radio"
+                                        class="form-check-input"
+                                        name="jenisKelamin"
+                                        id="lakiLaki"
+                                        value="Laki-laki">
+
+                                    <label class="form-check-label" for="lakiLaki">
+                                        Laki-laki
+                                    </label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input type="radio"
+                                        class="form-check-input"
+                                        name="jenisKelamin"
+                                        id="perempuan"
+                                        value="Perempuan">
+
+                                    <label class="form-check-label" for="perempuan">
+                                        Perempuan
+                                    </label>
+                                </div>
+
+                            </div>
+
+                            <small class="pesan-error" id="errorGender"></small>
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label for="telepon" class="form-label">
+                                Nomor HP *
+                            </label>
+
+                            <input type="tel" id="telepon"
+                                name="telepon"
+                                class="form-control"
+                                placeholder="Contoh: 081234567890"
+                                inputmode="numeric">
+
+                            <small class="pesan-error" id="errorTelepon"></small>
+                        </div>
+
+
+                        <div class="mb-4">
+                            <label for="email" class="form-label">
+                                Email (Opsional)
+                            </label>
+
+                            <input type="email" id="email"
+                                name="email"
+                                class="form-control"
+                                placeholder="Contoh: nama@email.com">
+
+                            <small class="pesan-error" id="errorEmail"></small>
+                        </div>
+
+
+                        <hr>
+
+
+                        <!-- DATA KUNJUNGAN -->
+                        <h5 class="judul-form">
+                            <i class="bi bi-calendar-check"></i>
+                            Data Kunjungan
+                        </h5>
+
+
+                        <div class="mb-3">
+                            <label for="poliPendaftaran" class="form-label">
+                                Poliklinik *
+                            </label>
+
+                            <select id="poliPendaftaran"
+                                name="poli"
+                                class="form-select">
+
+                                <option value="">-- Pilih Poliklinik --</option>
+
+                                <option value="Umum">Poli Umum</option>
+
+                                <option value="Gigi">Poli Gigi</option>
+
+                                <option value="KIA">Poli KIA</option>
+
+                                <option value="Gizi">Poli Gizi</option>
+
+                            </select>
+
+                            <small class="pesan-error" id="errorPoli"></small>
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label for="dokterPendaftaran" class="form-label">
+                                Pilih Dokter *
+                            </label>
+
+                            <select id="dokterPendaftaran"
+                                name="dokter"
+                                class="form-select"
+                                disabled>
+
+                                <option value="">Pilih poliklinik terlebih dahulu</option>
+
+                            </select>
+
+                            <small class="pesan-error" id="errorDokter"></small>
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label for="tanggalKunjungan" class="form-label">
+                                Tanggal Kunjungan *
+                            </label>
+
+                            <input type="date"
+                                id="tanggalKunjungan"
+                                name="tanggalKunjungan"
+                                class="form-control">
+
+                            <small class="pesan-error" id="errorTanggalKunjungan"></small>
+
+                            <small class="text-muted">
+                                Pendaftaran hanya tersedia untuk hari ini
+                                sampai 14 hari ke depan.
+                            </small>
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label for="keluhan" class="form-label">
+                                Keluhan Pasien *
+                            </label>
+
+                            <textarea id="keluhan"
+                                name="keluhan"
+                                class="form-control"
+                                rows="4"
+                                maxlength="200"
+                                placeholder="Tuliskan keluhan Anda (10-200 karakter)"></textarea>
+
+                            <div class="d-flex justify-content-between">
+                                <small class="pesan-error" id="errorKeluhan"></small>
+
+                                <small id="jumlahKarakter">
+                                    0/200 karakter
+                                </small>
+                            </div>
+                        </div>
+
+
+                        <hr>
+
+
+                        <!-- PERSETUJUAN -->
+                        <div class="mb-4">
+
+                            <div class="form-check">
+                                <input type="checkbox"
+                                    id="persetujuan"
+                                    name="persetujuan"
+                                    class="form-check-input">
+
+                                <label for="persetujuan" class="form-check-label">
+                                    Saya menyetujui penggunaan data pribadi
+                                    untuk keperluan pendaftaran pasien. *
+                                </label>
+                            </div>
+
+                            <small class="pesan-error" id="errorPersetujuan"></small>
+
+                        </div>
+
+
+                        <!-- TOMBOL -->
+                        <div class="d-grid gap-2">
+
+                            <button type="submit" class="btn btn-submit">
+                                <i class="bi bi-send"></i>
+                                Kirim Pendaftaran
+                            </button>
+
+                            <button type="reset" class="btn btn-reset">
+                                Reset Formulir
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- MODAL RINGKASAN PENDAFTARAN -->
+    <div class="modal fade" id="modalRingkasan"
+        tabindex="-1"
+        aria-labelledby="judulModal"
+        aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content">
+
+                <div class="modal-header modal-header-custom">
+
+                    <h5 class="modal-title" id="judulModal">
+                        <i class="bi bi-check-circle-fill"></i>
+                        Pendaftaran Berhasil
+                    </h5>
+
+                    <button type="button"
+                        class="btn-close btn-close-white"
+                        data-bs-dismiss="modal"
+                        aria-label="Tutup">
+                    </button>
+
+                </div>
+
+
+                <div class="modal-body">
+
+                    <div class="text-center mb-3">
+
+                        <i class="bi bi-check-circle-fill ikon-berhasil"></i>
+
+                        <h5>Terima Kasih!</h5>
+
+                    </div>
+
+
+                    <div class="nomor-antrean">
+                        <small>Nomor Antrean Anda</small>
+
+                        <h2 id="hasilAntrean">UMUM-001</h2>
+                    </div>
+
+                    <table class="table table-sm">
+                        <tr>
+                            <td>Nama</td>
+                            <td id="hasilNama"></td>
+                        </tr>
+
+                        <tr>
+                            <td>NIK</td>
+                            <td id="hasilNik"></td>
+                        </tr>
+
+                        <tr>
+                            <td>Usia</td>
+                            <td id="hasilUsia"></td>
+                        </tr>
+
+                        <tr>
+                            <td>Jenis Kelamin</td>
+                            <td id="hasilGender"></td>
+                        </tr>
+
+                        <tr>
+                            <td>Nomor HP</td>
+                            <td id="hasilTelepon"></td>
+                        </tr>
+
+                        <tr>
+                            <td>Email</td>
+                            <td id="hasilEmail"></td>
+                        </tr>
+
+                        <tr>
+                            <td>Poliklinik</td>
+                            <td id="hasilPoli"></td>
+                        </tr>
+
+                        <tr>
+                            <td>Dokter</td>
+                            <td id="hasilDokter"></td>
+                        </tr>
+
+                        <tr>
+                            <td>Tanggal Kunjungan</td>
+                            <td id="hasilTanggal"></td>
+                        </tr>
+
+                        <tr>
+                            <td>Keluhan</td>
+                            <td id="hasilKeluhan"></td>
+                        </tr>
+                    </table>
+
+                </div>
+
+
+                <div class="modal-footer">
+
+                    <button type="button"
+                        class="btn btn-layanan"
+                        data-bs-dismiss="modal">
+                        Selesai
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container text-center">
+
+            <p class="mb-1">
+                &copy; 2026 Klinik Pratama Sehat Nusantara.
+            </p>
+
+            <p class="mb-0">
+                Melayani dengan Sepenuh Hati.
+            </p>
+
+        </div>
+    </footer>
+
+
+    <!-- BOOTSTRAP JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JAVASCRIPT LOKAL -->
+    <script src="js/script.js"></script>
+
+</body>
+</html>
